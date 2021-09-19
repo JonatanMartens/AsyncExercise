@@ -31,7 +31,8 @@ class UsersService {
 				name: randomEl(adjectives)+' '+randomEl(nouns)
 			}
 			this.users.push(newUser);
-		}		
+		}
+		this.users.push({id: guid(), name: "test"}); // Used for testing		
 	}	
 	
 	getUsers(){
