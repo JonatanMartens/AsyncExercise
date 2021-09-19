@@ -9,3 +9,7 @@ function toUpperCase(value) {
     )
   );
 }
+
+async function toUpperCaseAsync(value) {
+  return toUpperCase(value);
+}
