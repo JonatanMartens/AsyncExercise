@@ -11,4 +11,18 @@ async function getUserPosts(username) {
   }
 }
 
-getUserPosts("test").then((posts) => console.log(posts));
+async function getPostComments(post) {
+  return Promise.all(
+    post.comments.map((commentId) => data.comments.getComment(commentId))
+  );
+}
+
+async function main(username = "test") {
+  const posts = await getUserPosts(username);
+  const comments = await Promise.all(
+    posts.map((post) => getPostComments(post))
+  );
+  console.log(comments);
+}
+
+main();
