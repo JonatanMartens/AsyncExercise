@@ -86,3 +86,9 @@ class CommentsService{
 let users = new UsersService();
 let posts = new PostsService(users.users);
 let comments = new CommentsService(posts.posts);
+
+module.exports = {
+	users,
+	posts,
+	comments
+}
